@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""Function for return shape for a matrix"""
+
+
 def matrix_shape(matrix):
     """Return shape from a matrix
 
