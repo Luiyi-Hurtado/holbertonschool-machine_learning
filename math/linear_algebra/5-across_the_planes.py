@@ -21,13 +21,8 @@ def add_matrices2D(mat1, mat2):
     None : Boolean
         if the shape of matrices are not the same
     """
-    len_mat1 = len(mat1)
-    len_mat2 = len(mat2[0])
     add_mat = [[0, 0], [0, 0]]
-
-    if not (len_mat1 == len_mat2):
-        return None
-    for row in range(len_mat1):
-        for colum in range(len_mat2):
+    for row in range(len(mat1)):
+        for colum in range(len(mat1[0])):
             add_mat[row][colum] = mat1[row][colum] + mat2[row][colum]
     return add_mat
