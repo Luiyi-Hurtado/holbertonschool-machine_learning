@@ -19,10 +19,16 @@ def add_matrices2D(mat1, mat2):
     List : new array
         a list content the add result from the two matrices
     None : Boolean
-        if the shape of matrices are not the same
+        if the shape of matrices are not the same 
     """
-    add_mat = [[0, 0], [0, 0]]
-    for row in range(len(mat1)):
-        for colum in range(len(mat1[0])):
-            add_mat[row][colum] = mat1[row][colum] + mat2[row][colum]
+    len_mat1 = len(mat1)
+    len_mat2 = len(mat2[0])
+    add_mat = []
+    if not (len_mat1 == len_mat2):
+        return None
+    for rows in range(len_mat1):
+        row = []
+        for colum in range(len_mat2):
+            row.append(mat1[rows][colum] + mat2[rows][colum])
+        add_mat.append(row)
     return add_mat
