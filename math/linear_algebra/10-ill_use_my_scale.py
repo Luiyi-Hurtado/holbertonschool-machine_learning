@@ -11,7 +11,7 @@ def np_shape(matrix):
             a matrix with different shape
 
     Return:
-        tuple : 
+        tuple :
             a tuple with the size of the matrix
     """
     return matrix.shape
