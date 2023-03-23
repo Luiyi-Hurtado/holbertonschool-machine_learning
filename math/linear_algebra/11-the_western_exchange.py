@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """
 Function for return a transposes matrix
-Using numpy dependeces and the transpose function
+Using the transpose function
 """
-import numpy as np
 
 
 def np_transpose(matrix):
@@ -18,6 +17,6 @@ def np_transpose(matrix):
         list : mat_t
             a transpose matrix
     """
-    mat_t = np.transpose(matrix)
+    mat_t = matrix.transpose()
 
     return mat_t
