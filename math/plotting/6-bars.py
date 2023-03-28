@@ -14,6 +14,7 @@ peaches = fruit[3]
 width = 0.5
 
 fig, ax = plt.subplots()
+
 ax.bar(columns, apples, width, label='apples', color='red')
 ax.bar(columns, bananas, width,
        bottom=fruit[0], label='bananas', color='yellow')
@@ -21,6 +22,7 @@ ax.bar(columns, oranges, width, bottom=fruit[1]
        + fruit[0], label='oranges', color='#ff8000')
 ax.bar(columns, peaches, width, bottom=fruit[2]
        + fruit[1] + fruit[0], label='peaches', color='#ffe5b4')
+
 ax.set_ylabel('Quantity of Fruit')
 ax.set_title('Number of Fruit per Person')
 ax.set_ylim([0, 80])
