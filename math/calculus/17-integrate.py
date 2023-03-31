@@ -17,7 +17,8 @@ def poly_integral(poly, C=0):
         A new list of coefficients representing the integral of the polynomial.
     """
 
-    if type(C) != int or type(poly) != list or not all(isinstance(i, (int, float)) for i in poly):
+    if type(C) != int or type(poly) != list or  \
+            not all(isinstance(i, (int, float)) for i in poly):
         return None
 
     result = [C]
