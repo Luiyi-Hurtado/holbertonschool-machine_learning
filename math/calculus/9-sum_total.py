@@ -17,6 +17,8 @@ def summation_i_squared(n):
         int:
             value for all squared numbers
     """
-    if isinstance(n, int):
-        sum = (n * (n + 1) * (2 * n + 1)) // 6
-        return sum
+    if not isinstance(n, int):
+        return None
+
+    sum = (n * (n + 1) * (2 * n + 1)) // 6
+    return sum
