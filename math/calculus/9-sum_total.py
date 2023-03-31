@@ -6,10 +6,16 @@ Function for sum a square notation
 
 def summation_i_squared(n):
     """
+    Use n like a stopping condition for calculate
+    the value for i
+
+    Args:
+        n (int):
+            is the stopping condition
+
+    Returns:
+        int:
+            value for all squared numbers
     """
-    sum = 0
     if isinstance(n, int):
-        for i in range(1, n + 1):
-            sum += (i*i)
-        return sum
-        # print(sum)
+        return (n * (n + 1) * (2 * n + 1)) // 6
