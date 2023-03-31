@@ -20,4 +20,5 @@ def summation_i_squared(n):
     if type(n) == int:
         sum = (n * (n + 1) * (2 * n + 1)) // 6
         return sum
-    return None
+    if type(n) != int:
+        return None
