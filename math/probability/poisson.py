@@ -10,16 +10,19 @@ class Poisson:
     Class representing a Poisson distribution.
 
     Parameters:
+    -----------
         data (list)
             A list the date to be used to estimate the distribution.
         lambths (float)
             The expected number of occurrences in a given time frame.
 
     Attributes:
+    -----------
         lambtha (float)
             The expected number of occurrences in a given time frame.
 
     Raises:
+    -------
         ValueError:
             If lambtha is not a positive value or equals to 0.
             If data is given but it´s not a list.
