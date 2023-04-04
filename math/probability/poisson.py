@@ -57,5 +57,4 @@ class Poisson:
         k = int(k)
         if k < 0:
             return 0
-        pmf = (self.lambtha**k)*(2.71828**(-self.lambtha))/self.fact(k)
-        return pmf
+        return (self.lambtha**k)*(2.7183**(self.lambtha))/self.fact(k)
