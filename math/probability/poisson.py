@@ -28,7 +28,7 @@ class Poisson:
 
     def __init__(self, data=None, lambtha=1.):
         """
-        Initialize a Poisson distrubucion with the fiven paramters.
+        Initialize a Poisson distrubucion with the given paramters.
 
         If data is not given, set lambtha to the given value.
         If data is given, calculate the lambtha of data
@@ -48,11 +48,20 @@ class Poisson:
 
     def fact(self, n):
         """
+        Give a factorial value from a specified integer.
+
+        If n is equal to 0, return 1.
+        If n is greater to 0, calculate the factorial of the value.
         """
         return 1 if n == 0 else n * self.fact(n-1)
 
     def pmf(self, k):
         """
+        Calculate the Poisson Probability Mass Function(PMF).
+
+        If k is not a int, turn to a integer.
+        If k is out of range, return 0.
+        Otherwise, calculate the probability mass function(PMF).
         """
         if not isinstance(k, int):
             k = int(k)
@@ -64,6 +73,11 @@ class Poisson:
 
     def cdf(self, k):
         """
+        Calculate the Poisson Cumulative Distribution Fucntion(CDF).
+
+        If k is not a int, turn to a integer.
+        If k is out of range, return 0.
+        Otherwise, calculate the Cumulative Distribution Fucntion(CDF).
         """
         if not isinstance(k, int):
             k = int(k)
