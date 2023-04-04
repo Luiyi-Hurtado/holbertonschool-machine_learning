@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 """
-This module contains the Poisson class,
-which represents a Poisson distribution.
+Module name: poisson.py
+Author: Luiyi-Hurado
+Date created: 4/4/2022
+Last updated: 4/4/2022
+Version: 1.0v
+
+Description: This module contains the Poisson class, which represents
+a Poisson distribution.
 """
 
 
