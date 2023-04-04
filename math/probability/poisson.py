@@ -53,8 +53,15 @@ class Poisson:
         """
         Give a factorial value from a specified integer.
 
-        If n is equal to 0, return 1.
-        If n is greater to 0, calculate the factorial of the value.
+        Parameters:
+        -----------
+            n (int)
+                A value for any function.
+
+        Returns:
+        --------
+            If n is equal to 0, return 1.
+            If n is greater to 0, calculate the factorial of the value.
         """
         return 1 if n == 0 else n * self.fact(n-1)
 
@@ -62,9 +69,16 @@ class Poisson:
         """
         Calculate the Poisson Probability Mass Function(PMF).
 
-        If k is not a int, turn to a integer.
-        If k is out of range, return 0.
-        Otherwise, calculate the probability mass function(PMF).
+        Parameters:
+        -----------
+            k (int)
+                Is the number of occurrences
+
+        Returns:
+        --------
+            If k is not a int, turn to a integer.
+            If k is out of range, return 0.
+            Otherwise, calculate the probability mass function(PMF).
         """
         if not isinstance(k, int):
             k = int(k)
@@ -78,9 +92,16 @@ class Poisson:
         """
         Calculate the Poisson Cumulative Distribution Fucntion(CDF).
 
-        If k is not a int, turn to a integer.
-        If k is out of range, return 0.
-        Otherwise, calculate the Cumulative Distribution Fucntion(CDF).
+        Parameters:
+        -----------
+            k (int)
+                Is the number of occurrences
+
+        Returns:
+        --------
+            If k is not a int, turn to a integer.
+            If k is out of range, return 0.
+            Otherwise, calculate the Cumulative Distribution Fucntion(CDF).
         """
         if not isinstance(k, int):
             k = int(k)
