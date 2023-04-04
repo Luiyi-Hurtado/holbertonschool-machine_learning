@@ -54,7 +54,24 @@ class Poisson:
     def pmf(self, k):
         """
         """
-        k = int(k)
+        if not isinstance(k, int):
+            k = int(k)
         if k < 0:
             return 0
-        return ((self.lambtha**k)*(2.7182818285**-self.lambtha))/self.fact(k)
+
+        pmf = ((self.lambtha**k)*(2.7182818285**-self.lambtha))/self.fact(k)
+        return pmf
+
+    def cdf(self, k):
+        """
+        """
+        if not isinstance(k, int):
+            k = int(k)
+        if k < 0:
+            return 0
+
+        cdf = 0.0
+        for i in range(k+1):
+            cdf += (self.lambtha**i / self.fact(i))
+        cdf *= (2.7182818285**-self.lambtha)
+        return cdf
