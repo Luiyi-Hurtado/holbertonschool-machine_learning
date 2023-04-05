@@ -4,7 +4,7 @@ Module name: exponential.py
 Author: Luiyi-Hurado
 Date created: 4/4/2022
 Last updated: 4/4/2022
-Version: 1.0v
+Version: 1.1v
 
 Description: This module contains the Exponential class, which represents
 a Exponential distribution.
@@ -51,7 +51,7 @@ class Exponential:
         Returns:
         --------
             If data is not given, set lambtha to the given value.
-            If data is given, calculate the lambtha of data
+            If data is given, calculate the lambtha of data.
         """
         if data is None:
             if lambtha <= 0:
@@ -66,6 +66,18 @@ class Exponential:
 
     def pdf(self, x):
         """
+        Calculate the Probability Density Function(PDF), with the lambtha value
+        and the x value.
+
+        Parameters:
+        -----------
+            x (int):
+                Is the time period.
+
+        Returns:
+        --------
+            If x is less than 0, return zero.
+            Otherwise, calculate the Probability Density Function(PDF).
         """
         if x < 0:
             return 0
@@ -74,6 +86,18 @@ class Exponential:
 
     def cdf(self, x):
         """
+        Calculate the Cumulative Distribution Function(CDF), with the lambtha value
+        and the x value.
+
+        Parameters:
+        -----------
+            x (int):
+                Is the time period.
+
+        Returns:
+        --------
+            If x is less than 0, return zero.
+            Otherwise, calculate the Cumulative Distribution Function(CDF).
         """
         if x < 0:
             return 0
