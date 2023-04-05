@@ -39,6 +39,9 @@ class Exponential:
         """
         Initialize a Poisson distrubucion with the given paramters.
 
+        If data is not given, set lambtha to the given value.
+        If data is given, calculate the lambtha of data.
+
         Parameters:
         -----------
             data (list)
@@ -47,11 +50,6 @@ class Exponential:
             lambtha (float)
                 The expected number of occurrences in a given time frame.
                 Default is 1.0.
-
-        Returns:
-        --------
-            If data is not given, set lambtha to the given value.
-            If data is given, calculate the lambtha of data.
         """
         if data is None:
             if lambtha <= 0:
