@@ -91,8 +91,9 @@ class Poisson:
         if k < 0:
             return 0
 
-        pmf = ((self.lambtha**k)*(2.7182818285**-self.lambtha))/self.fact(k)
-        return pmf
+        pmf_value = ((self.lambtha**k) *
+                     (2.7182818285**-self.lambtha))/self.fact(k)
+        return pmf_value
 
     def cdf(self, k):
         """
@@ -114,8 +115,8 @@ class Poisson:
         if k < 0:
             return 0
 
-        cdf = 0.0
+        cdf_value = 0.0
         for i in range(k+1):
-            cdf += (self.lambtha**i / self.fact(i))
-        cdf *= (2.7182818285**-self.lambtha)
-        return cdf
+            cdf_value += (self.lambtha**i / self.fact(i))
+        cdf_value *= (2.7182818285**-self.lambtha)
+        return cdf_value

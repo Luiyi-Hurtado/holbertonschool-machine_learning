@@ -33,7 +33,9 @@ class Normal:
 
     Raises
     ------
-
+        If the standard derivation is less or equal to 0.
+        If the data is not a list.
+        If the lenght of data is less than 2 values.
     """
 
     def __init__(self, data=None, mean=0., stddev=1.):
@@ -65,3 +67,35 @@ class Normal:
             self.mean = sum(data) / len(data)
             self.stddev = (sum([(x - self.mean)**2 for x in data])
                            / (len(data)))**0.5
+
+    def z_score(self, x):
+        """
+        Use a normal probability to find the value of a normal random
+        variable X.
+
+        Parameters
+        ----------
+            x (int)
+                Individual value.
+
+        Returns
+        -------
+            Calculate the z_score.
+        """
+        z_value = (x - self.mean) / self.stddev
+        return z_value
+
+    def x_value(self, z):
+        """
+        Use a normal probability to find the value of a normal random
+        variable X.
+
+        Parameters
+        ----------
+            z (int)
+                z-score can be placed on a normal distribution curve.
+
+        Re
+        """
+        x_value = self.mean + (z*self.stddev)
+        return x_value
