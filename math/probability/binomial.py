@@ -65,7 +65,7 @@ class Binomial:
             if not isinstance(data, list):
                 raise TypeError("data must be a list")
             if len(data) < 2:
-                raise ValueError("data msut contain multiple values")
+                raise ValueError("data must contain multiple values")
             self.n = round(sum(data) / len(data))
             self.p = sum(data) / (self.n*1.0)
             # self.n = int(self.n)
