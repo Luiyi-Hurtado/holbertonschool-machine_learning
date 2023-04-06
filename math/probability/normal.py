@@ -99,3 +99,11 @@ class Normal:
         """
         x_value = self.mean + (z*self.stddev)
         return x_value
+
+    def pdf(self, x):
+        """
+        """
+        term1 = 1 / (self.stddev * ((2 * 3.1415926536) ** 0.5))
+        term2 = ((x - self.mean) ** 2) / (2 * (self.stddev ** 2))
+        pdf_value = term1 * (2.7182818285 ** (-term2))
+        return pdf_value
