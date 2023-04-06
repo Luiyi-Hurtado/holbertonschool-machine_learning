@@ -19,7 +19,8 @@ class Binomial:
     ----------
         data : list or None
             A list of the data to be used to estimate the distribution.
-            If None, the distribution will be initialized with the given `n` and `p`.
+            If None, the distribution will be initialized with the given
+            `n` and `p`.
             Default None
         n : int
             The number of trials.
@@ -54,19 +55,20 @@ class Binomial:
             will be calculated from the data.
         """
         if data is None:
-            if n < 0:
+            if n <= 0:
                 raise ValueError("n must be a positive value")
-            if p <= 0 and p >= 1:
+            if p <= 0 or p >= 1:
                 raise ValueError("p must be greater than 0 and less than 1")
-            self.n = int(n)
-            self.p = float(p)
+            self.n = n
+            self.p = p
         else:
             if not isinstance(data, list):
                 raise TypeError("data must be a list")
             if len(data) < 2:
                 raise ValueError("data msut contain multiple values")
-            self.n = round(sum(data)/len(data))
-            self.p = float(sum(data) / (self.n*len(data)))
+            self.n = round(sum(data) / len(data))
+            self.p = sum(data) / (self.n*1.0)
+            # self.n = int(self.n)
 
     def fact(self, n):
         """
