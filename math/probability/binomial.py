@@ -72,54 +72,60 @@ class Binomial:
             self.n = round(mean / self.p)
             self.p = mean / self.n
 
-    # def fact(self, n):
-    #     """
-    #     Give a factorial value from a specified integer.
+    def fact(self, n):
+        """
+        Give a factorial value from a specified integer.
 
-    #     Parameters:
-    #     -----------
-    #         n (int)
-    #             A value for any function.
+        Parameters:
+        -----------
+            n (int)
+                A value for any function.
 
-    #     Returns:
-    #     --------
-    #         If n is equal to 0, return 1.
-    #         If n is greater to 0, calculate the factorial of the value.
-    #     """
-    #     return 1 if n == 0 else n * self.fact(n-1)
+        Returns:
+        --------
+            If n is equal to 0, return 1.
+            If n is greater to 0, calculate the factorial of the value.
+        """
+        return 1 if n == 0 else n * self.fact(n-1)
 
-    # def pmf(self, k):
-    #     """
-    #     Calculate the probability mass function (PMF)
-    #     of the Binomial distribution for a given number of successes `k`.
+    def pmf(self, k):
+        """
+        Calculate the probability mass function (PMF)
+        of the Binomial distribution for a given number of successes `k`.
 
-    #     Parameters
-    #     ----------
-    #         k : int
-    #             The number of successes.
+        Parameters
+        ----------
+            k : int
+                The number of successes.
 
-    #     Returns
-    #     -------
-    #         float
-    #             The probability of getting `k` successes in `n`
-    #             trials with probability of success `p`.
-    #     """
-    #     pass
+        Returns
+        -------
+            float
+                The probability of getting `k` successes in `n`
+                trials with probability of success `p`.
+        """
+        if k < 0:
+            return 0
+        if not isinstance(k, int):
+            k = int(k)
+        ncx = (self.fact(self.n) / (self.fact(self.n - k)
+                                    * self.fact(k)))
+        return ncx * self.p ** k * (1 - self.p) ** (self.n - k)
 
-    # def cdf(self, k):
-    #     """
-    #     Calculate the cumulative distribution function (CDF)
-    #     of the Binomial distribution for a given number of successes `k`.
+    def cdf(self, k):
+        """
+        Calculate the cumulative distribution function (CDF)
+        of the Binomial distribution for a given number of successes `k`.
 
-    #     Parameters
-    #     ----------
-    #         k : int
-    #             The number of successes.
+        Parameters
+        ----------
+            k : int
+                The number of successes.
 
-    #     Returns
-    #     -------
-    #         float
-    #             The probability of getting up to `k` successes in `n` trials
-    #             with probability of success `p`.
-    #     """
-    #     pass
+        Returns
+        -------
+            float
+                The probability of getting up to `k` successes in `n` trials
+                with probability of success `p`.
+        """
+        pass
