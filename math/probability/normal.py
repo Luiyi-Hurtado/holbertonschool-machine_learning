@@ -64,7 +64,7 @@ class Normal:
                 raise TypeError("data must be a list")
             if len(data) < 2:
                 raise ValueError("data must contain multiple values")
-            self.mean = sum(data) / len(data)
+            self.mean = (sum(data) / len(data))
             self.stddev = (sum([(x - self.mean)**2 for x in data])
                            / (len(data)))**0.5
 
@@ -80,7 +80,8 @@ class Normal:
 
         Returns
         -------
-            Calculate the z_score.
+            z_value : float
+                Calculate the z_score.
         """
         z_value = (x - self.mean) / self.stddev
         return z_value
@@ -94,16 +95,49 @@ class Normal:
         ----------
             z (int)
                 z-score can be placed on a normal distribution curve.
-
-        Re
         """
         x_value = self.mean + (z*self.stddev)
         return x_value
 
     def pdf(self, x):
         """
+        Calculate the probability density function value of the normal
+        distribution at x.
+
+        Parameters
+        ----------
+            x : float
+                The value at which to evaluate the PDF.
+
+        Returns
+        -------
+            pdf_value : float
+                The PDF value at x.
         """
         term1 = 1 / (self.stddev * ((2 * 3.1415926536) ** 0.5))
         term2 = ((x - self.mean) ** 2) / (2 * (self.stddev ** 2))
         pdf_value = term1 * (2.7182818285 ** (-term2))
         return pdf_value
+
+    def erf(self, x):
+        """calculates error"""
+        x1 = 2 / 3.1415926536 ** 0.5
+        x2 = x - (x**3 / 3) + (x**5 / 10) - (x**7 / 42) + (x**9 / 216)
+        return x1 * x2
+
+    def cdf(self, x):
+        """
+        Calculate the cumulative distribution function value of the normal distribution at x.
+
+        Parameters
+        ----------
+            x : float
+                The value at which to evaluate the CDF.
+
+        Returns
+        -------
+            cdf_value : float
+                The CDF value at x.
+        """
+        cdf_value = (x - self.mean) / (self.stddev * (2 ** 0.5))
+        return (self.erf(cdf_value) + 1) / 2
