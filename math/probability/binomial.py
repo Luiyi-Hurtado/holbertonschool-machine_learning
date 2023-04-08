@@ -110,7 +110,8 @@ class Binomial:
             k = int(k)
         ncx = (self.fact(self.n) / (self.fact(self.n - k)
                                     * self.fact(k)))
-        return ncx * self.p ** k * (1 - self.p) ** (self.n - k)
+        pmf_value = ncx * self.p ** k * (1 - self.p) ** (self.n - k)
+        return pmf_value
 
     def cdf(self, k):
         """
@@ -128,4 +129,9 @@ class Binomial:
                 The probability of getting up to `k` successes in `n` trials
                 with probability of success `p`.
         """
-        pass
+        if k < 0:
+            return 0
+        if not isinstance(k, int):
+            k = int(k)
+        cdf_value = sum(self.pmf(i) for i in range(k + 1))
+        return cdf_value
