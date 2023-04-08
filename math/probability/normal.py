@@ -127,7 +127,8 @@ class Normal:
 
     def cdf(self, x):
         """
-        Calculate the cumulative distribution function value of the normal distribution at x.
+        Calculate the cumulative distribution function
+        value of the normal distribution at x.
 
         Parameters
         ----------
