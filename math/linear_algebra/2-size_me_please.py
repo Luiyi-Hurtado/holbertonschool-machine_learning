@@ -2,8 +2,13 @@
 """
 This module calculate the shape of a matrix
 """
-import numpy
 
 
 def matrix_shape(matrix):
-    return list(numpy.shape(matrix))
+    """
+    calculate the shape of the matrix
+    """
+    shape = []
+    for i in range(len(matrix)):
+        shape.append(len(matrix[i]))
+    return shape
