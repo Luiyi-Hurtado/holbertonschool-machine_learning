@@ -2,7 +2,8 @@
 """
 This module provides function for that adds two matrices element-wise.
 
-The function in this module take two matrices as input and returns a new matrices with the add numbers.
+The function in this module take two matrices as input
+returns a new matrices with the add numbers.
 """
 
 
@@ -12,6 +13,9 @@ def add_matrices2D(mat1, mat2):
 
     Args:
         mat1 (list): list of integers.
+        mat2 (list): list of integers.
+    returns:
+        add_matrices: new list of integers
     """
     pass
     if len(mat1[0]) != len(mat2[0]):
